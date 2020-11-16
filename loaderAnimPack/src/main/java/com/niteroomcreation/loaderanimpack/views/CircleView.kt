@@ -45,12 +45,28 @@ class CircleView : View {
     var circleColor: Int = resources.getColor(android.R.color.holo_blue_bright, null)
     var circleDrawOnlyStroke: Boolean = false
 
-    private var paint: Paint = Paint()
+    private var circlePaint: Paint = Paint()
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
+        //make it smoother
+        circlePaint.isAntiAlias = true
 
+        if (circleDrawOnlyStroke) {
+            circlePaint.style = Paint.Style.STROKE
+            circlePaint.strokeWidth = circleStrokeWidth.toFloat()
+        } else {
+            circlePaint.style = Paint.Style.FILL
+        }
+
+        circlePaint.color = circleColor
+
+        //set coordinate view
+        val xyCoordinate = (circleRadius + (circleStrokeWidth / 2)).toFloat()
+
+        //begin to draw a circle view
+        canvas!!.drawCircle(xyCoordinate, xyCoordinate, circleRadius.toFloat(), circlePaint)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -60,7 +76,7 @@ class CircleView : View {
         setMeasuredDimension(widthHeight, widthHeight)
     }
 
-    fun initAttributes(attrs: AttributeSet) {
+    private fun initAttributes(attrs: AttributeSet) {
 
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView, 0, 0)
 
