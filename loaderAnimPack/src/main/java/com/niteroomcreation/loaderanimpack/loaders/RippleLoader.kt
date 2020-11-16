@@ -3,6 +3,8 @@ package com.niteroomcreation.loaderanimpack.loaders
 import android.content.Context
 import android.util.AttributeSet
 import android.view.Gravity
+import android.view.ViewTreeObserver
+import com.niteroomcreation.loaderanimpack.views.CircleView
 import com.niteroomcreation.loaderanimpack.views.RippleView
 
 /**
@@ -27,6 +29,8 @@ open class RippleLoader : RippleView {
         initView()
     }
 
+    private lateinit var circleView: CircleView
+
     override fun initView() {
 
         //resetting layout
@@ -34,6 +38,19 @@ open class RippleLoader : RippleView {
         removeAllViewsInLayout()
 
         this.gravity = Gravity.CENTER
+
+        //init circle view
+        circleView = CircleView(context, circleRadius, circleColor)
+
+        //add
+        addView(circleView)
+
+        viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+
+            }
+
+        })
     }
 
     override fun initAttributes(attrs: AttributeSet) {
