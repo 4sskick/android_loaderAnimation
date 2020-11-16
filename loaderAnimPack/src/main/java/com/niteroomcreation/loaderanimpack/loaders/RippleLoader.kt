@@ -13,18 +13,20 @@ import com.niteroomcreation.loaderanimpack.views.RippleView
 
 open class RippleLoader : RippleView {
 
-    constructor(context: Context) : super(context){
+    constructor(context: Context) : super(context) {
         initView()
     }
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs){
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         initAttributes(attrs)
         initView()
     }
+
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
-    ){
+    ) {
         initAttributes(attrs)
         initView()
     }
@@ -57,6 +59,8 @@ open class RippleLoader : RippleView {
     }
 
     override fun startLoading() {
+        var animationSet = animationSet()
+        circleView.startAnimation(animationSet)
     }
 
 }
