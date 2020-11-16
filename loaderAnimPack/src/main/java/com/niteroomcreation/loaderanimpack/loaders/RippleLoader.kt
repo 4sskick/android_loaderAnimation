@@ -11,9 +11,7 @@ import com.niteroomcreation.loaderanimpack.views.RippleView
 open class RippleLoader : RippleView {
 
     constructor(context: Context) : super(context)
-
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
-
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
         context,
         attrs,
@@ -21,15 +19,18 @@ open class RippleLoader : RippleView {
     )
 
     override fun initView() {
-        TODO("Not yet implemented")
+
+        //resetting layout
+        removeAllViews()
+        removeAllViewsInLayout()
+
+
     }
 
     override fun initAttributes(attrs: AttributeSet) {
-        TODO("Not yet implemented")
     }
 
     override fun startLoading() {
-        TODO("Not yet implemented")
     }
 
 }

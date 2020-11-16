@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleView">
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="circleDrawOnlystroke" format="boolean" />
+        <attr name="circleStrokeWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RippleLoader">
+        <attr name="ripple_circleInitialRadius" format="dimension" />
+        <attr name="ripple_circleColor" format="color" />
+        <attr name="ripple_fromAlpha" format="float" />
+        <attr name="ripple_toAplha" format="float" />
+        <attr name="ripple_animDuration" format="integer" />
+        <attr name="ripple_interpolator" format="reference" />
+    </declare-styleable>
+</resources>
