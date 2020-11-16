@@ -89,5 +89,4 @@ class CircleView : View {
 
         typedArray.recycle()
     }
-
 }
