@@ -22,12 +22,12 @@ abstract class RippleView : LinearLayout, LoaderContracts {
         defStyleAttr
     )
 
-    var circleRadius: Int = 40
-    var circleColor: Int = resources.getColor(android.R.color.holo_purple)
-    var fromAlpha: Float = 0.9f
-    var toAlpha: Float = 0.01f
-    var animationDuration = 2000
-    var interpolator: Interpolator = DecelerateInterpolator()
+    var rippleRadius: Int = 40
+    var rippleColor: Int = resources.getColor(android.R.color.holo_purple)
+    var rippleFromAlpha: Float = 0.9f
+    var rippleToAlpha: Float = 0.01f
+    var rippleDurationAnimation = 2000
+    var rippleInterpolator: Interpolator = DecelerateInterpolator()
 
     abstract fun initView()
 
@@ -48,12 +48,12 @@ abstract class RippleView : LinearLayout, LoaderContracts {
             Animation.RELATIVE_TO_SELF,
             0.5f
         )
-        animationScale.duration = animationDuration.toLong()
+        animationScale.duration = rippleDurationAnimation.toLong()
         animationScale.repeatCount = Animation.INFINITE
 
         //alpha
-        val animationAlpha = AlphaAnimation(fromAlpha, toAlpha)
-        animationAlpha.duration = animationDuration.toLong()
+        val animationAlpha = AlphaAnimation(rippleFromAlpha, rippleToAlpha)
+        animationAlpha.duration = rippleDurationAnimation.toLong()
         animationAlpha.repeatCount = Animation.INFINITE
 
         //add animation to set
@@ -61,7 +61,7 @@ abstract class RippleView : LinearLayout, LoaderContracts {
         set.addAnimation(animationAlpha)
 
         //setup configuration
-        set.duration = animationDuration.toLong()
+        set.duration = rippleDurationAnimation.toLong()
         set.repeatCount = Animation.INFINITE
         set.repeatMode = Animation.RESTART
 

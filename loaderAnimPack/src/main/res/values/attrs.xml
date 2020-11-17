@@ -4,16 +4,16 @@
     <declare-styleable name="CircleView">
         <attr name="circleRadius" format="dimension" />
         <attr name="circleColor" format="color" />
-        <attr name="circleDrawOnlystroke" format="boolean" />
+        <attr name="circleDrawOnlyStroke" format="boolean" />
         <attr name="circleStrokeWidth" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="RippleLoader">
-        <attr name="ripple_circleInitialRadius" format="dimension" />
+        <attr name="ripple_circleRadius" format="dimension" />
         <attr name="ripple_circleColor" format="color" />
         <attr name="ripple_fromAlpha" format="float" />
-        <attr name="ripple_toAplha" format="float" />
-        <attr name="ripple_animDuration" format="integer" />
+        <attr name="ripple_toAlpha" format="float" />
+        <attr name="ripple_durationAnimation" format="integer" />
         <attr name="ripple_interpolator" format="reference" />
     </declare-styleable>
 </resources>

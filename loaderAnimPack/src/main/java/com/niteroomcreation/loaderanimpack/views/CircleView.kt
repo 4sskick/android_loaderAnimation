@@ -81,8 +81,8 @@ class CircleView : View {
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView, 0, 0)
 
         this.circleRadius = typedArray.getDimensionPixelSize(R.styleable.CircleView_circleRadius, 30)
-        this.circleColor = typedArray.getColor(R.styleable.CircleView_circleColor, resources.getColor(android.R.color.holo_blue_bright, null))
-        this.circleDrawOnlyStroke = typedArray.getBoolean(R.styleable.CircleView_circleDrawOnlystroke, false)
+        this.circleColor = typedArray.getColor(R.styleable.CircleView_circleColor, resources.getColor(android.R.color.holo_blue_bright))
+        this.circleDrawOnlyStroke = typedArray.getBoolean(R.styleable.CircleView_circleDrawOnlyStroke, false)
 
         if (this.circleDrawOnlyStroke)
             this.circleStrokeWidth = typedArray.getDimensionPixelSize(R.styleable.CircleView_circleStrokeWidth, 0)
