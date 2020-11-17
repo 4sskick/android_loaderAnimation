@@ -33,6 +33,13 @@ open class RippleLoader : RippleView {
 
     private lateinit var circleView: CircleView
 
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+
+        setMeasuredDimension(4 * circleRadius, 4 * circleRadius)
+    }
+
     override fun initView() {
 
         //resetting layout
@@ -49,13 +56,14 @@ open class RippleLoader : RippleView {
 
         viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-
+                startLoading()
+                this@RippleLoader.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
-
         })
     }
 
     override fun initAttributes(attrs: AttributeSet) {
+
     }
 
     override fun startLoading() {
