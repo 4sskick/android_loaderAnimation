@@ -42,7 +42,7 @@ class CircleView : View {
     //attrs declared on XML
     var circleRadius: Int = 30
     var circleStrokeWidth: Int = 0
-    var circleColor: Int = resources.getColor(android.R.color.holo_blue_bright, null)
+    var circleColor: Int = resources.getColor(android.R.color.holo_blue_bright)
     var circleDrawOnlyStroke: Boolean = false
 
     private var circlePaint: Paint = Paint()
