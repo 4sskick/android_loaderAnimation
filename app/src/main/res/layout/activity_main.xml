@@ -15,8 +15,8 @@
         app:ripple_circleRadius="34dp" />
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintBottom_toBottomOf="parent"
